@@ -165,7 +165,7 @@ header{
 
 .secondary-header{
   min-height: 10vh;
-  background-color: #020202;
+  background-color: var(--clr-accent);
 }
 
 
