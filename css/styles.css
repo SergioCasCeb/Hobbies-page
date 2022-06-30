@@ -44,6 +44,7 @@ body {
   background-color: var(--clr-dark);
   line-height: 1.5;
   overflow-x: hidden;
+  position: relative;
 }
 
 h1,
@@ -154,6 +155,10 @@ img {
 .from-left.appear, .from-right.appear{
   transform: translateX(0);
   opacity: 1;
+}
+
+.no-scroll{
+  overflow: hidden;
 }
 
 
@@ -398,8 +403,71 @@ footer{
   .hobbies-container .hobby:nth-child(2n+2) .img{
     order: 2;
   }
+}
 
-  
 
+/*Pre loader*/
+
+.preloader{
+  background-color: #1C1C1C;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 500ms ease;
   
+}
+
+.preloader-outter{
+  width: 15rem;
+  height: 15rem;
+  border-radius: 10px;
+  background-color: var(--clr-accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: loader 3s infinite ease;
+  
+}
+
+.preloader-inner{
+  width: 12.5rem;
+  height: 12.5rem;
+  border-radius: 10px;
+  background-color: #1C1C1C;
+}
+
+.preloader-filler{
+  width: 100%;
+  height: 100%;
+  background-color: var(--clr-accent);
+  border: 2px solid var(--clr-accent);
+  animation: filler 3s infinite ease;
+}
+
+@keyframes loader{
+  0%{transform: rotate(0deg);}
+  25%{transform: rotate(180deg);}
+  50%{transform: rotate(180deg);}
+  75%{transform: rotate(360deg);}
+  100%{transform: rotate(360deg);}
+}
+
+@keyframes filler{
+  0%{height: 0;}
+  25%{height: 0;}
+  50%{height: 100%;}
+  75%{height: 100%;}
+  100%{height: 0;}
+}
+
+.preloader-finish{
+  opacity: 0;
+  pointer-events: none;
 }

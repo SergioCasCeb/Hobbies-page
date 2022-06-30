@@ -1,3 +1,13 @@
+
+const body = document.querySelector('body');
+
+window.addEventListener('load', () => {
+    const preloader = document.querySelector('.preloader'); 
+    preloader.classList.add('preloader-finish');
+
+});
+
+
 const sliders = document.querySelectorAll('.slide-in'); 
 const appearOptions = {
     threshold: 0,
@@ -18,4 +28,5 @@ const appearOnScroll = new IntersectionObserver(
 
     sliders.forEach(slider => {
         appearOnScroll.observe(slider);
-    })
+})
+
